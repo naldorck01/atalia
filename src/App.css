@@ -1,0 +1,28 @@
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 62.5%;
+  font-weight: 300;
+}
+
+.container--fluid {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0;
+  width: 100%;
+}
+
+.catalog--grid {
+  display: grid;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.catalog--grid--container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.catalog--item > img {
+  object-fit: cover;
+  width: 100%;
+}
