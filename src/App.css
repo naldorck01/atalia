@@ -25,6 +25,9 @@ body {
   grid-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
 }
+.catalog--item {
+  margin-bottom: 1rem;
+}
 .catalog--item > img {
   object-fit: cover;
   width: 100%;
