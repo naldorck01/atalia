@@ -34,9 +34,9 @@ function App() {
         {products.map((product) => (
           <li className="catalog--item" key={product.id}>
               <img src={require(`assets/images/FOTOS-ATALIA/${product.img}`)} alt={product.name} />
-              <p><b>{product.name}</b></p>
-              <p>{product.brand}</p>
-              <p>COP $1</p>
+              <p className="catalog--item--title"><b>{product.name}</b></p>
+              <p className="catalog--item--brand">{product.brand}</p>
+              <p className="catalog--item--price">COP $1</p>
           </li>
         ))}
       </ul>
