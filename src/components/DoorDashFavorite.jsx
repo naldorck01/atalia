@@ -1,26 +1,31 @@
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-const DoorDashFavorite = props => (
+const ImageGrid = props => (
   <ContentLoader
-    width={450}
-    height={400}
-    viewBox="0 0 450 400"
-    backgroundColor="#f0f0f0"
-    foregroundColor="#dedede"
+    viewBox="0 0 1000 1200"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
     {...props}
-  >
-    <rect x="43" y="304" rx="4" ry="4" width="271" height="9" />
-    <rect x="44" y="323" rx="3" ry="3" width="119" height="6" />
-    <rect x="42" y="77" rx="10" ry="10" width="388" height="217" />
+  >    
+    <rect x="0" y="0" rx="2" ry="2" width="320" height="320" />
+    <rect x="340" y="0" rx="2" ry="2" width="320" height="320" />
+    <rect x="680" y="0" rx="2" ry="2" width="320" height="320" />
+    <rect x="0" y="350" rx="2" ry="2" width="320" height="320" />
+    <rect x="340" y="350" rx="2" ry="2" width="320" height="320" />
+    <rect x="680" y="350" rx="2" ry="2" width="320" height="320" />
+    <rect x="0" y="710" rx="2" ry="2" width="320" height="320" />
+    <rect x="340" y="710" rx="2" ry="2" width="320" height="320" />
+    <rect x="680" y="710" rx="2" ry="2" width="320" height="320" />
+
   </ContentLoader>
 )
 
-DoorDashFavorite.metadata = {
-  name: 'Nic Bovee', // My name
-  github: 'ghettifish', // Github username
-  description: 'A simple favorite from the DoorDash local favorites.', // Little tagline
-  filename: 'DoorDashFavorite', // filename of your loader
+ImageGrid.metadata = {
+  name: 'Hassan Tijani.A',
+  github: 'surepeps',
+  description: 'Image Grid with Pagination',
+  filename: 'ImageGrid',
 }
 
-export default DoorDashFavorite
+export default ImageGrid

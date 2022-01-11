@@ -3,8 +3,6 @@ import "assets/css/Reset.css"
 import "App.css"
 import DoorDashFavorite from "components/DoorDashFavorite"
 
-import Products from "data/products.json"
-
 function App() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -12,25 +10,46 @@ function App() {
   useEffect(() => {
     setTimeout(async () => {
       try {
-        const res = await fetch("data/products.json")
-        console.log(res)
+        const res = await fetch(
+          "https://raw.githubusercontent.com/naldorck01/atalia/main/src/data/products.json",
+        )
         const data = await res.json()
+        setProducts(data)
+        setLoading(false)
       } catch (error) {
         console.log(error)
       }
-    }, 2000)
+    }, 3000)
+    
+
   }, [])
+
+  const SkeletonProductsLoading = ({ children, ...props }) => {
+    return <DoorDashFavorite />
+  }
+
+  const ProductList = ({ children, ...props }) => {
+    const template = (
+      <ul className="catalog--grid--container">
+        {products.map((product) => (
+          <li className="catalog--item" key={product.id}>
+              <img src={require(`assets/images/FOTOS-ATALIA/${product.img}`)} alt={product.name} />
+              <p><b>{product.name}</b></p>
+              <p>{product.brand}</p>
+              <p>COP $1</p>
+          </li>
+        ))}
+      </ul>
+    )
+
+    return template
+  }
 
   const template = (
     <main className="container--fluid">
       <section className="catalog--grid">
-        <ul className="catalog--grid--container">
-          {Products.map((product) => (
-            <li className="catalog--item" key={product.index}>
-              <img src={require(`assets/images/FOTOS-ATALIA/${product.img}`)} alt={product.name} />
-            </li>
-          ))}
-        </ul>
+        {loading && !products.length && <SkeletonProductsLoading />}
+        {!loading && products.length && <ProductList />}
       </section>
     </main>
   )
