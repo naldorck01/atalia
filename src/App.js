@@ -11,7 +11,7 @@ function App() {
     setTimeout(async () => {
       try {
         const res = await fetch(
-          "https://raw.githubusercontent.com/naldorck01/atalia/main/src/data/products.json",
+          "https://raw.githubusercontent.com/naldorck01/atalia/main/src/data/productsv4.json",
         )
         const data = await res.json()
         setProducts(data)
